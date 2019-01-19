@@ -12,4 +12,4 @@ def hello_world():
 app.layout = html.Div([html.H2('Hello World)])
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run()
