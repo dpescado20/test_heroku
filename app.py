@@ -1,10 +1,15 @@
 from flask import Flask
 
-app = Flask(__name__)
+import dash_html_components as html
 
-@app.route('/')
+server = Flask(__name__)
+app = dash.Dash(__name__, server=server)
+
+@app.route('/flask')
 def hello_world():
     return 'Hello World'
 
+app.layout = html.Div([html.H2('Hello World)])
+
 if __name__ == '__main__':
-    app.run()
+    app.run_server()
